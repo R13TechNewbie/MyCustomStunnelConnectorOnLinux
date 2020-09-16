@@ -26,11 +26,17 @@ HOW TO USE:
 7. run stunnel-ssh on one terminal, and run tun2socks on other terminal (./stunnel-ssh and ./tun2socks)
 
 Troubleshoot:
+
 Q: Ssh disconnected, how to reconnect?
+
 A: ctrl+c stunnel-ssh, then run it again
 
+
 Q: I want to change ssh server
+
 A: ctrl+c stunnel-ssh and tun2socks, then run "sudo ifconfig tun0 down". edit your stunnel-ssh file, add your new stunnel file, reconnect to ssh using vanilla ssh "ssh -D ...", exchange key with typing yes, ctrl+c ssh connection, restart stunnel-ssh and tun2socks
 
+
 Q: I want to...
+
 A: Shut up and just read the scripts already. I am too lazy to answer :v
