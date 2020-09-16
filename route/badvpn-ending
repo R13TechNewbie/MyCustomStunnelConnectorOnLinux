@@ -1,0 +1,5 @@
+sudo tmux new -s tun '
+sudo ifconfig tun0 10.0.0.1 netmask 255.255.255.0;
+sudo route add default gw 10.0.0.2 metric 6;
+sudo ifconfig tun0 up;
+'

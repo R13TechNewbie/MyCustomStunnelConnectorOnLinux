@@ -1,0 +1,15 @@
+#!/bin/bash
+
+port="$(sudo ss -nltp | grep 1337 | sed 's/.*=\([0-9]*\),.*/\1/')"
+sudo kill $port
+
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-sg1.conf
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-sg1-instagram.conf
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-sg2-youtube.conf
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-sg2-instagram.conf
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-sg2.conf
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-sg3.conf
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-sg3-instagram.conf
+sudo stunnel /usr/local/etc/stunnel/stunnel-us4-instagram.conf
+#sudo stunnel /usr/local/etc/stunnel/stunnel-ssh-us4.conf
+sshpass -p 'ujicoba' ssh -D 127.0.0.1:8989 -N fastssh.com-ujicoba@localhost -p 1337

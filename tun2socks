@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd routing
+./script
+sudo chmod +x routing
+./routing
+

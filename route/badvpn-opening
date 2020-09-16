@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo tmux new -d -s badvpn '
+sudo ip tuntap add dev tun0 mode tun user influencingtrot;
+sudo ip addr replace 10.0.0.1/24 dev tun0;
+badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr 127.0.0.1:8989 --udpgw-remote-server-addr 127.0.0.1:7300;
+'

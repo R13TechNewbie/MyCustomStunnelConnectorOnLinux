@@ -1,0 +1,29 @@
+#!/bin/bash
+
+ifconfig > network
+grep 192.168.43 network > route43
+grep 192.168.42 network > route42
+grep 192.168.0 network > route0
+
+if [ -s route43 ] 
+then
+  cat badvpn-opening > routing
+  cat route-43 >> routing
+  cat badvpn-ending >> routing
+fi
+
+if [ -s route42 ]  
+then
+  cat badvpn-opening > routing
+  cat route-42 >> routing
+  cat badvpn-ending >> routing
+fi
+
+if [ -s route0 ]  
+then
+  cat badvpn-opening > routing
+  cat route-0 >> routing
+  cat badvpn-ending >> routing
+fi
+
+rm route43 route42 route0
